@@ -1,0 +1,22 @@
+\subsection{Exercises}
+\textbf{1.1 Solution.} $x\leq y$ and $y\leq x$ if and only if $x=y$ in property (i), which satisfies the antisymmetry property. 
+
+For $x,y,z\in S$, if at least one pair of them are equal to each other, then the statement of transitivity becomes trivial (if $x=y$ and $y\leq z$, then $x\leq z$; or if $x=y=z$ and $y\leq z$, then $x=z\rightarrow x\leq z$). Else if no pairs among $x,y,z$ hold an equality, then the property of transitivity is directly satisfied by property (ii). 
+
+Finally, in the case of totality, $x\leq y$ or $y\leq x$ is the same as property (i), as both essentially say that every pair of elements in $S$ is comparable.
+
+\textbf{1.2 Solution.} We construct a set $S$ and prove that it is a partial order on $\mathcal{F}(X,P)$. For two functions $f$ and $g$ in the function space $\mathcal{F}(X,P)$, $(f,g)\in S$ only if $f(x)\in P$ and $g(x)\in P$ for some $x\in X$. Now, we show that $S$ satisfies the three rules for being a partial order on function space $\mathcal{F}(X,P)$:
+\begin{enumerate}
+    \item (antisymmetry) Since $P$ is a partially ordered set and $f(x),g(x)\in P$, then if $f(x)\leq g(x)$ and $g(x)\leq f(x)$, $f(x)=g(x)$ by the antisymmetry of some partial order on $P$.
+    \item (transitivity) If $f(x)\leq g(x)$ and $g(x)\leq h(x)$, then $f(x)\leq h(x)$ by the transitivity of some partial order on $P$. Therefore $(f,h)\in S$ as well.
+    \item (reflexivity) For all functions $f$ in the function space, $(f,f)\in S$ since $f(x)=f(x)$ implies $f(x)\leq f(x)$.
+\end{enumerate}
+Thus, $S$ is a partial order on the function space $\mathcal{F}(X,P)$ determined by $f\leq g$ if $f(x)\leq g(x)$.
+
+\textbf{1.3 Solution.} The Identity function takes $X$ back to itself, so $P(ID_X)=P(X)$. It also takes $P(X)$ back to itself, $P(X)$. Therefore $P(ID_X)=P(X)=ID_{P(X)}$. 
+
+$P(g\circ f)$ takes a subset $S_X\subseteq X$ and sends it to a subset $S_Z\subseteq Z$, whereas $P(g)\circ P(f)$ takes the set $S_X$ to a set $S_Y\subseteq Y$ and then takes $S_Y$ to another set $T_Z\in Z$. For every $x\in S_X$, $P(g\circ f)$ sends $x$ to a $z=g(f(x))\in S_Z$. On the other hand, $P(g)\circ P(f)$ first sends $x$ to a $y=f(x)\in S_Y$, and then sends $y$ to $z=g(y)=g(f(x))\in T_Z$. But since both the LHS and RHS send $x\in S_X$ to $g(f(x))$, it must be true that $S_Z=T_Z$, and therefore the equality $P(g\circ f)=P(g)\circ P(f)$ holds.
+
+\textbf{1.4 Solution.} (a) \boxed{\text{False.}} We provide a counter example. Let $S=\{1\}$, $X=\{1, 2\}$, $Y=\{3\}$, and $f(1)=f(2)=3$. Then $f(S)=\{3\}$, and $f^{-1}(\{3\})=\{1, 2\}$ since the preimage of $\{3\}$ includes the element 2 in addition to 1. Therefore $f^{-1}(f(S))\neq S$.
+
+(b) Define function $f:X\to Y$. Since it is invertible, we have $f^{-1}:Y\to X$ s.t. every $x\in X$ maps to a unique $y\in Y$ and vice versa. In other words, $f$ is bijective. 

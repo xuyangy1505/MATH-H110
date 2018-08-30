@@ -1,0 +1,51 @@
+\section{Vector Spaces}
+\subsection{Preliminaries}
+\subsubsection{Sets}
+%%% POWER SET %%%
+\textbf{Definition} (Power Set). The \textbf{\textit{power set}} of a set $S$ is the collection, or \textbf{\textit{family}}, of subsets of $S$, denoted $P(S)$. E.g. the family of open intervals in $\mathbb{R}$ is a subset of $P(\mathbb{R})$.
+
+%%% CARTESIAN PRODUCT %%%
+\textbf{Definition} (Cartesian Product). For two sets $X$ and $Y$, $X\times Y:=\{(x,y)\mid x\in X, y\in Y\}$, also known as the \textbf{\textit{Cartesian product}} of the factors $X$ and $Y$. Denote $X^n$ to be the Cartesian product of a set with itself $n$ times.
+
+%%% POSETS %%% 
+\textbf{Definition} (Relation). A \textbf{\textit{relation}} between a set $X$ and $Y$ is any subset of $X\times Y$. A relation between a set and itself is said to be a relation \textit{on} $X$. 
+
+\textbf{Definition} (Partial Order). A \textbf{\textit{partial order}} on set $S$ is a relation defined by $P\subseteq S\times S$ such that the following properties hold:
+\begin{enumerate}
+    \item \textbf{(antisymmetry)} $(a,b)\in P\wedge(b,a)\in P\implies a=b$.
+    \item \textbf{(transitivity)} $(a,b)\in P\wedge(b,c)\in P\implies(a,c)\in P$.
+    \item \textbf{(reflexivity)} $\forall a\in S$, $(a,a)\in P$.
+\end{enumerate}
+Typically, we write $a\leq b$ if $(a,b)\in P$. Furthermore we write $a<b$ if $a\leq b$ and $a\neq b$. So then the above properties become:
+\begin{enumerate}
+    \item \textbf{(antisymmetry)} $a\leq b\wedge b\leq a\implies a=b$.
+    \item \textbf{(transitivity)} $a\leq b\wedge b\leq c\implies a\leq c$.
+    \item \textbf{(reflexivity)} $a\leq a$.
+\end{enumerate}
+\textbf{Definition} (Poset). If there exists a partial order on $S$, then we say $S$ is a \textbf{\textit{partially-ordered-set}}, or \textbf{\textit{poset}}. If $a$ and $b$ are elements of a poset and $a\leq b$ or $b\leq a$, then we say that $a$ and $b$ are \textbf{\textit{comparable}}. Otherwise they are \textbf{\textit{incomparable}}.
+
+\textbf{Definition} (Max \& Min). Suppose $P$ is a partially ordered set and $X\subseteq P$. Then $X$ inherits a partial order from $P$ (think subgraphs). For an element $u\in P$ s.t. $u\geq x$ for all $x\in X$, $u$ is an \textbf{\textit{upper bound}} of $X$. For an element $M\in X$ s.t. $M\geq x$ for all $x\in X$, $M$ is a \textbf{\textit{maximal}} element. Similarly, for an element $l\in P$ s.t. $l\leq x$ for all $x\in X$, $l$ is a \textbf{\textit{lower bound}} of $X$. For an element $m\in X$ s.t. $m\leq x$ for all $x\in X$, $m$ is a \textbf{\textit{minimal}} element.
+
+\textbf{Definition} ("Toset"). A partial order in which every pair of elements is comparable is called a \textbf{\textit{total order}}. A set with a total order is known as a \textbf{\textit{totally ordered set}}. A \textbf{\textit{chain}} is a totally ordered subset of a partially ordered set
+
+\subsubsection{Functions}
+\textbf{Definition} (Function). A \textbf{\textit{function}} $f$ is defined to be a relation between sets $X$ and $Y$ s.t. for each $x\in X$ there exists exactly one $y\in Y$ such that the pair $(x,y)$ is included in the relation defined by $f$. The set $X$ is the \textbf{\textit{domain}} of $f$ and $Y$ is the \textbf{\textit{codomain}} of $f$. The symbol $\mapsto$ reads "maps to". Also, the collection of \textit{all} functions $f:X\to Y$ is denoted $\mathcal{F}(X,Y)$.
+
+\textbf{Definition} (Composition). If $f:X\to Y$ and $g:Y\to Z$, then their \textbf{\textit{composition}} $g\circ f:X\to Z$ is defined by $(g\circ f)(x)=g(f(x))$. Know how to draw "commutative diagrams".
+
+\textbf{Definition} (Power Functions). Given a function $f:X\to Y$, $P(f):P(X)\to P(Y)$ is equivalent to the function that maps a subset of $X$ to a subset of $Y$. Thus $P$ is in itself a function, $P: \mathcal{F}(X,Y)\to \mathcal{F}(P(X),P(Y))$. Also, $P^{-1}(f):P(Y)\to P(X)$ is the power function of $f$ that sends a subset in $Y$ to its preimage.
+
+\textbf{Definition} (Image, Range, Preimage). Given a set $S\subseteq X$ and a function $f:X\to Y$, the \textbf{\textit{image}} is the set $f(S):=\{f(x)\mid x\in X\}$. If $S=X$, then $f(S)$ is the \textbf{\textit{range}} of $f$. The range is a subset of the codomain. For a set $T\subseteq Y$, the \textbf{\textit{preimage}} is the set $f^{-1}(T):=\{x\in X\mid f(x)\in T\}$. 
+
+\textbf{Definition} (Function Inverse). Given a function $f:X\to Y$, $f$ is invertible if for each $y\in Y$, there exists a unique $x\in X$ s.t. $f^{-1}(x)=y$. In particular, it is invertible if its range is equivalent to its codomain and the preimage of each singleton in its range is a singleton in its domain.
+
+
+
+
+
+
+
+
+
+\newpage %%%%%% EXERCISES %%%%%%
+\input{P_1}
